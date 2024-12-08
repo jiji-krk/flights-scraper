@@ -15,7 +15,15 @@ from selenium.webdriver.chrome.options import Options
 def scrape_flights():
     """Scrape flight data and save to SQLite database."""
 
-    driver = webdriver.Chrome()
+    # Configure Chrome options
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Mode sans tête
+    chrome_options.add_argument("--no-sandbox")  # Nécessaire pour GitHub Actions
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Evite les erreurs de mémoire partagée
+    chrome_options.add_argument("--remote-debugging-port=9222")  # Pour déboguer si nécessaire
+
+    # Configure ChromeDriver
+    driver = webdriver.Chrome(options=chrome_options)
 
     try:
         # URL de Kayak
