@@ -18,7 +18,7 @@ jobs:
           python-version: '3.9'  # Version de Python à utiliser
 
       - name: Install dependencies
-        run: pip install selenium pandas sqlite3  # Installe les dépendances
+        run: pip install selenium pandas  # Installe les dépendances
 
       - name: Run Python script
         run: python scrape_flights.py  # Exécute le script Python
