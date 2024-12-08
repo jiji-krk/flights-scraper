@@ -13,11 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Download previous database artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: flights-database  # Télécharge l'artefact précédent
-          path: flights_data.db
+      - name: Print current directory
+        run: pwd  # Affiche le répertoire courant
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -29,6 +26,9 @@ jobs:
 
       - name: Run scraping script
         run: python schedule.py  # Exécute le script Python
+
+      - name: Check if database exists
+        run: ls -l flights_data.db  # Vérifie si la base SQLite existe
 
       - name: Upload SQLite database
         uses: actions/upload-artifact@v3
