@@ -3,7 +3,7 @@ name: Update Flight Data Hourly
 on:
   schedule:
     - cron: "0 * * * *"  # Exécuter toutes les heures
-  workflow_dispatch:  # Permet aussi de lancer manuellement
+  workflow_dispatch:  # Permet d'exécuter manuellement
 
 jobs:
   update-database:
@@ -13,11 +13,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Print current directory
-        run: pwd  # Affiche le répertoire courant
-
-      - name: List files in working directory
-        run: ls -l  # Liste les fichiers présents avant d'exécuter le script
+      - name: Install Chrome and ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+          wget -q "https://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_linux64.zip"
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          rm google-chrome-stable_current_amd64.deb chromedriver_linux64.zip
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,11 +33,8 @@ jobs:
       - name: Install dependencies
         run: pip install selenium pandas
 
-      - name: Run scraping script with debug
-        run: python schedule.py || exit 1  # Exécute le script et affiche les journaux
-
-      - name: Check if database exists
-        run: ls -l flights_data.db  # Vérifie si le fichier existe
+      - name: Run scraping script
+        run: python schedule.py || exit 1
 
       - name: Upload SQLite database
         uses: actions/upload-artifact@v3
