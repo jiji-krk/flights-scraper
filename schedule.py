@@ -120,7 +120,7 @@ def scrape_flights():
         driver.quit()
 
 
-if "__main__":
+if __name__ == "__main__":
     scrape_flights()
     print("Done.")
 
