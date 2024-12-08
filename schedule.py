@@ -1,5 +1,3 @@
-from airflow import DAG
-from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -114,7 +112,7 @@ def scrape_flights():
         flights_df = page_scrape()
         print("flights df : ",flights_df)
         #flights_df.to_csv("test.csv", index=False)
-        conn = sqlite3.connect("/opt/airflow/flights_data.db")
+        conn = sqlite3.connect("flights_data.db")
         flights_df.to_sql("flights", conn, if_exists="append", index=False)
         conn.close()
         print("Data saved to SQLite.")
