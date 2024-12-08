@@ -21,4 +21,4 @@ jobs:
         run: pip install selenium pandas  # Installe les dépendances
 
       - name: Run Python script
-        run: python scrape_flights.py  # Exécute le script Python
+        run: python schedule.py  # Exécute le script Python
