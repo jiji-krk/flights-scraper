@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Remove old versions of Chrome
+        run: sudo apt-get remove -y google-chrome-stable || true
+
       - name: Install Chrome and ChromeDriver
         run: |
           sudo apt-get update
