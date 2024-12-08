@@ -16,6 +16,9 @@ jobs:
       - name: Print current directory
         run: pwd  # Affiche le répertoire courant
 
+      - name: List files in working directory
+        run: ls -l  # Liste les fichiers présents avant d'exécuter le script
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -24,14 +27,14 @@ jobs:
       - name: Install dependencies
         run: pip install selenium pandas
 
-      - name: Run scraping script
-        run: python schedule.py  # Exécute le script Python
+      - name: Run scraping script with debug
+        run: python schedule.py || exit 1  # Exécute le script et affiche les journaux
 
       - name: Check if database exists
-        run: ls -l flights_data.db  # Vérifie si la base SQLite existe
+        run: ls -l flights_data.db  # Vérifie si le fichier existe
 
       - name: Upload SQLite database
         uses: actions/upload-artifact@v3
         with:
           name: flights-database
-          path: flights_data.db  # Sauvegarde la base mise à jour
+          path: flights_data.db
