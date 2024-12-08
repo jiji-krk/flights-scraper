@@ -1,24 +1,37 @@
-name: Run Python Script Hourly
+name: Update Flight Data Hourly
 
 on:
   schedule:
     - cron: "0 * * * *"  # Exécuter toutes les heures
-  workflow_dispatch:  # Permet d'exécuter manuellement
+  workflow_dispatch:  # Permet aussi de lancer manuellement
 
 jobs:
-  run-script:
-    runs-on: ubuntu-latest  # Utilise une machine virtuelle Ubuntu
+  update-database:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Récupère le code du dépôt
+        uses: actions/checkout@v3
+
+      - name: Download previous database artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: flights-database  # Télécharge l'artefact précédent
+          path: flights_data.db
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Version de Python à utiliser
+          python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install selenium pandas  # Installe les dépendances
+        run: pip install selenium pandas
 
-      - name: Run Python script
+      - name: Run scraping script
         run: python schedule.py  # Exécute le script Python
+
+      - name: Upload SQLite database
+        uses: actions/upload-artifact@v3
+        with:
+          name: flights-database
+          path: flights_data.db  # Sauvegarde la base mise à jour
