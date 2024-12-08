@@ -1,0 +1,24 @@
+name: Run Python Script Hourly
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Exécuter toutes les heures
+  workflow_dispatch:  # Permet d'exécuter manuellement
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # Utilise une machine virtuelle Ubuntu
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Récupère le code du dépôt
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Version de Python à utiliser
+
+      - name: Install dependencies
+        run: pip install selenium pandas sqlite3  # Installe les dépendances
+
+      - name: Run Python script
+        run: python scrape_flights.py  # Exécute le script Python
