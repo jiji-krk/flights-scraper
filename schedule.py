@@ -9,15 +9,16 @@ from time import sleep, strftime
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.utils import ChromeType
+from webdriver_manager.utils import ChromeType
 
 
 def scrape_flights():
     """Scrape flight data and save to SQLite database."""
 
+    # Configure ChromeDriverManager et Selenium
     chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
     chrome_options = Options()
