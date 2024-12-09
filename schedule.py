@@ -41,7 +41,7 @@ def scrape_flights():
         driver.get(kayak)
         sleep(5)
         print("Driver Title : ", driver.title)
-        #print("Page Html : ", driver.page_source)
+        print("Page Html : ", driver.page_source)
 
         # Gérer le popup
         try:
