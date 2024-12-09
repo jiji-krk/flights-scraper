@@ -42,6 +42,18 @@ def scrape_flights():
 
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
+    driver.execute_cdp_cmd(
+        "Page.addScriptToEvaluateOnNewDocument",
+        {
+            "source": """
+                Object.defineProperty(navigator, 'webdriver', {
+                    get: () => undefined
+                })
+            """
+        },
+    )
+
+
     try:
         # URL de Kayak
         kayak = 'https://www.kayak.fr/flights/CDG-DXB/2025-03-02/2025-05-04?ucs=1yezklu&sort=bestflight_a'
