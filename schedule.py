@@ -34,13 +34,12 @@ def scrape_flights():
 
     driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
 
-
-
     try:
         # URL de Kayak
         kayak = 'https://www.kayak.fr/flights/CDG-DXB/2025-03-02/2025-05-04?ucs=1yezklu&sort=bestflight_a'
         driver.get(kayak)
         sleep(3)
+        print("Driver Title : ", driver.title)
         #print("Page Html : ", driver.page_source)
 
         # Gérer le popup
