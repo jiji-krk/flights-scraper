@@ -39,7 +39,7 @@ def scrape_flights():
         # URL de Kayak
         kayak = 'https://www.kayak.fr/flights/CDG-DXB/2025-03-02/2025-05-04?ucs=1yezklu&sort=bestflight_a'
         driver.get(kayak)
-        sleep(3)
+        sleep(5)
         print("Driver Title : ", driver.title)
         #print("Page Html : ", driver.page_source)
 
@@ -49,6 +49,7 @@ def scrape_flights():
                 EC.element_to_be_clickable((By.XPATH, '//button[.//div[contains(text(), "Tout refuser")]]'))
             )
             reject_button.click()
+            print("Popup button found, clicking...")
         except Exception as e:
             print(f"Popup handling error: {e}")
 
