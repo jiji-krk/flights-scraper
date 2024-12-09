@@ -18,17 +18,8 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Remove Chrome
-        run: sudo apt purge google-chrome-stable || true
-
-      - name: Remove default Chromium
-        run: sudo apt purge chromium-browser || true
-
-      - name: Install a new Chromium
-        run: sudo apt install -y chromium-browser
-
       - name: Install all necessary packages
-        run: pip install requests beautifulsoup4 pandas webdriver-manager selenium
+        run: pip install --upgrade selenium webdriver-manager pandas
 
       - name: Run scraping script
         run: python schedule.py
