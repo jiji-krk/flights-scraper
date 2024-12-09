@@ -13,31 +13,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Remove old versions of Chrome
-        run: sudo apt-get remove -y google-chrome-stable || true
-
-      - name: Install Chrome and ChromeDriver
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip
-          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
-          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
-          wget -q "https://chromedriver.storage.googleapis.com/$CHROME_VERSION/chromedriver_linux64.zip"
-          unzip chromedriver_linux64.zip
-          sudo mv chromedriver /usr/local/bin/
-          rm google-chrome-stable_current_amd64.deb chromedriver_linux64.zip
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Install dependencies
-        run: pip install selenium pandas
+      - name: Remove Chrome
+        run: sudo apt purge google-chrome-stable || true
+
+      - name: Remove default Chromium
+        run: sudo apt purge chromium-browser || true
+
+      - name: Install a new Chromium
+        run: sudo apt install -y chromium-browser
+
+      - name: Install all necessary packages
+        run: pip install requests beautifulsoup4 pandas webdriver-manager selenium
 
       - name: Run scraping script
-        run: python schedule.py || exit 1
+        run: python schedule.py
 
       - name: Upload SQLite database
         uses: actions/upload-artifact@v3
