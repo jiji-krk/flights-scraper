@@ -48,6 +48,10 @@ def scrape_flights():
         driver.get(kayak)
         sleep(5)
         print("Driver Title : ", driver.title)
+        # Attendre que les conteneurs de vols soient visibles
+        WebDriverWait(driver, 15).until(
+            EC.presence_of_all_elements_located((By.XPATH, '//div[contains(@class, "nrc6-inner")]'))
+        )
         print("Page Html : ", driver.page_source)
 
         # Gérer le popup
