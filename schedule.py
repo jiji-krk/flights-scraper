@@ -17,7 +17,7 @@ def scrape_flights():
     """Scrape flight data and save to SQLite database."""
 
     # Configuration des proxies
-    HTTP_PROXY = "http://se50206:Samouya7@http.internetpsa.inetpsa.com:80"
+    #HTTP_PROXY = "http://se50206:Samouya7@http.internetpsa.inetpsa.com:80"
 
     # Configure ChromeDriverManager et Selenium
     chrome_service = Service(ChromeDriverManager().install())
@@ -25,7 +25,7 @@ def scrape_flights():
     chrome_options = Options()
 
     # Ajout du proxy
-    chrome_options.add_argument(f"--proxy-server={HTTP_PROXY}")
+    #chrome_options.add_argument(f"--proxy-server={HTTP_PROXY}")
 
     options = [
         "--headless",
