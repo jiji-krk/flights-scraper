@@ -45,13 +45,24 @@ def scrape_flights():
 
         # Gérer le popup
         try:
+            # Basculer vers l'iframe si nécessaire
+            iframe = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.TAG_NAME, "iframe"))
+            )
+            driver.switch_to.frame(iframe)
+        
+            # Maintenant, interagir avec le bouton "Tout refuser"
             reject_button = WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, '//button[.//div[contains(text(), "Tout refuser")]]'))
             )
+            print("Popup button found in iframe, clicking...")
             reject_button.click()
-            print("Popup button found, clicking...")
+        
+            # Revenir au contexte principal
+            driver.switch_to.default_content()
         except Exception as e:
-            print(f"Popup handling error: {e}")
+            print(f"Popup handling or iframe error: {e}")
+
 
         # Fonction de scraping
         def page_scrape():
