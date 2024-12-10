@@ -10,10 +10,11 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 def scrape_flights():
     """Scrape flight data and save to SQLite database."""
 
-    # Configure ChromeDriverManager et Selenium
+    # Configuration de ChromeDriverManager et Selenium
     chrome_service = Service(ChromeDriverManager().install())
     chrome_options = Options()
 
@@ -25,7 +26,7 @@ def scrape_flights():
         "--disable-extensions",  # Désactive les extensions
         "--no-sandbox",  # Nécessaire pour certains environnements Linux
         "--disable-dev-shm-usage",  # Utilise un espace partagé réduit
-        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
     ]
     for option in options_list:
         chrome_options.add_argument(option)
@@ -81,9 +82,7 @@ def scrape_flights():
             out_durations, return_durations = [], []
             out_times, return_times = [], []
             out_stops, return_stops = [], []
-            out_stop_cities, return_stop_cities = [], []
-            out_airlines, return_airlines = [], []
-            prices = []
+            out_airlines, prices = [], []
 
             for container in flight_containers:
                 try:
@@ -97,13 +96,13 @@ def scrape_flights():
 
                     stops = container.find_elements(By.XPATH, './/div[contains(@class, "JWEO")]/div[contains(@class, "vmXl-mod-variant-default")]/span[contains(@class, "JWEO-stops-text")]')
                     out_stops.append(stops[0].text if len(stops) > 0 else "direct")
-                    return_stops.append(stops[1].text if len(stops) > 1 else "direct")
 
                     airlines = container.find_elements(By.XPATH, './/div[@class="J0g6-labels-grp"]/div[@class="J0g6-operator-text"]')
                     airline_text = airlines[0].text if airlines else None
                     out_airlines.append(airline_text)
-                    prices.append(container.find_element(By.XPATH, './/div[contains(@class, "f8F1-price-text")]').text.replace('€', '').strip())
 
+                    price_element = container.find_element(By.XPATH, './/div[contains(@class, "f8F1-price-text")]')
+                    prices.append(price_element.text.replace('€', '').strip())
                 except Exception as e:
                     print(f"Error processing a container: {e}")
 
@@ -113,7 +112,6 @@ def scrape_flights():
                 'Out Time': out_times,
                 'Return Time': return_times,
                 'Out Stops': out_stops,
-                'Return Stops': return_stops,
                 'Out Airline': out_airlines,
                 'Price': prices,
             })
@@ -123,13 +121,16 @@ def scrape_flights():
 
         # Scraping et sauvegarde
         flights_df = page_scrape()
-        print("flights df : ", flights_df)
-        conn = sqlite3.connect("flights_data.db")
-        flights_df.to_sql("flights", conn, if_exists="append", index=False)
-        conn.close()
-        print("Data saved to SQLite.")
+        if not flights_df.empty:
+            conn = sqlite3.connect("flights_data.db")
+            flights_df.to_sql("flights", conn, if_exists="append", index=False)
+            conn.close()
+            print("Data saved to SQLite.")
+        else:
+            print("No flights data scraped.")
     finally:
         driver.quit()
+
 
 if __name__ == "__main__":
     scrape_flights()
