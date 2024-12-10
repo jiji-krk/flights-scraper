@@ -51,24 +51,9 @@ def scrape_flights():
         sleep(5)
         print("Driver Title : ", driver.title)
 
-        # Gérer le popup
-        try:
-            iframe = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.TAG_NAME, "iframe"))
-            )
-            driver.switch_to.frame(iframe)
-            reject_button = WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, '//button[.//div[contains(text(), "Tout refuser")]]'))
-            )
-            print("Popup button found, clicking...")
-            reject_button.click()
-            driver.switch_to.default_content()
-        except Exception as e:
-            print(f"Popup handling error: {e}")
-
         # Attendre les conteneurs de vols
         try:
-            flight_containers = WebDriverWait(driver, 30).until(
+            flight_containers = WebDriverWait(driver, 50).until(
                 EC.presence_of_all_elements_located((By.XPATH, '//div[contains(@class, "nrc6-inner")]'))
             )
             print(f"{len(flight_containers)} conteneurs de vols trouvés.")
