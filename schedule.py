@@ -46,7 +46,7 @@ def scrape_flights():
 
     try:
         # URL de Kayak
-        kayak = 'https://www.kayak.fr/flights/CDG-DXB/2025-03-02/2025-05-04?ucs=1yezklu&sort=bestflight_a'
+        kayak = 'https://www.kayak.fr/flights/PAR-DXB/2025-03-02/2025-05-03?ucs=1fwu1ju&sort=bestflight_a&fs=airlines=-MULT,flylocal;stops=0'
         driver.get(kayak)
         sleep(5)
         print("Driver Title : ", driver.title)
