@@ -1,0 +1,287 @@
+Out Duration,Return Duration,Out Time,Return Time,Out Stops,Return Stops,Out Stop Cities,Return Stop Cities,Out Airline,Return Airline,Price,Scraped Timestamp
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 00:42:58
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:42:58
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:42:58
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:42:58
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 00:42:58
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 00:42:58
+6h 40min,7h 20min,"23:20 – 09:00
++1",00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 00:42:58
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 00:42:58
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,587,2024-12-09 00:42:58
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:42:58
+10h 45min,10h 20min,"18:45 – 08:30
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:42:58
+9h 21min,7h 20min,"11:40 – 00:01
++1",00:40 – 06:00,1 escale,direct,AMS,,KLM,Air France,774,2024-12-09 00:42:58
+,,,,,,,,,,,2024-12-09 00:42:58
+,,,,,,,,,,,2024-12-09 00:42:58
+,,,,,,,,,,,2024-12-09 00:42:58
+10h 00min,11h 10min,08:15 – 21:15,11:45 – 20:55,1 escale,1 escale,DOH,DOH,Qatar Airways,Qatar Airways,774,2024-12-09 00:56:03
+11h 25min,8h 40min,"14:10 – 04:35
++1",06:00 – 12:40,1 escale,1 escale,KWI,KWI,Kuwait Airways,Kuwait Airways,403,2024-12-09 00:56:03
+6h 40min,7h 20min,"23:20 – 09:00
++1",00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 00:56:03
+9h 50min,8h 40min,"21:10 – 10:00
++1",06:00 – 12:40,1 escale,1 escale,MCT,KWI,Oman Air,Kuwait Airways,569,2024-12-09 00:56:03
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 00:56:03
+8h 25min,9h 10min,11:10 – 22:35,"23:35 – 06:45
++1",1 escale,1 escale,BAH,BAH,Gulf Air,Gulf Air,589,2024-12-09 00:56:03
+9h 55min,10h 30min,"15:20 – 04:15
++1","21:50 – 06:20
++1",1 escale,1 escale,AMM,AMM,Royal Jordanian,Royal Jordanian,555,2024-12-09 00:56:03
+6h 40min,7h 10min,10:00 – 19:40,08:20 – 13:30,direct,direct,,,Emirates,Emirates,917,2024-12-09 00:56:03
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:56:03
+8h 25min,11h 25min,11:10 – 22:35,"21:20 – 06:45
++1",1 escale,1 escale,BAH,BAH,Gulf Air,Gulf Air,559,2024-12-09 00:56:03
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:56:03
+9h 55min,8h 40min,"15:20 – 04:15
++1",06:00 – 12:40,1 escale,1 escale,AMM,KWI,Royal Jordanian,Kuwait Airways,577,2024-12-09 00:56:03
+6h 45min,7h 10min,"21:35 – 07:20
++1",08:20 – 13:30,direct,direct,,,Emirates,Emirates,919,2024-12-09 00:56:03
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 00:56:03
+6h 40min,7h 20min,10:00 – 19:40,14:40 – 20:00,direct,direct,,,Emirates,Emirates,918,2024-12-09 00:56:03
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 00:56:03
+11h 25min,8h 40min,"14:10 – 04:35
++1",06:00 – 12:40,1 escale,1 escale,KWI,KWI,Kuwait Airways,Kuwait Airways,399,2024-12-09 09:31:31
+11h 25min,8h 40min,"14:10 – 04:35
++1",06:00 – 12:40,1 escale,1 escale,KWI,KWI,Kuwait Airways,Kuwait Airways,382,2024-12-09 09:31:31
+9h 50min,8h 40min,"21:10 – 10:00
++1",06:00 – 12:40,1 escale,1 escale,MCT,KWI,Oman Air,Kuwait Airways,569,2024-12-09 09:31:31
+6h 40min,7h 20min,"23:20 – 09:00
++1",00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 09:31:31
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 09:31:31
+8h 25min,9h 10min,11:10 – 22:35,"23:35 – 06:45
++1",1 escale,1 escale,BAH,BAH,Gulf Air,Gulf Air,590,2024-12-09 09:31:31
+9h 55min,10h 30min,"15:20 – 04:15
++1","21:50 – 06:20
++1",1 escale,1 escale,AMM,AMM,Royal Jordanian,Royal Jordanian,556,2024-12-09 09:31:31
+6h 40min,7h 10min,10:00 – 19:40,08:20 – 13:30,direct,direct,,,Emirates,Emirates,917,2024-12-09 09:31:31
+8h 25min,11h 25min,11:10 – 22:35,"21:20 – 06:45
++1",1 escale,1 escale,BAH,BAH,Gulf Air,Gulf Air,567,2024-12-09 09:31:31
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 09:31:31
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 09:31:31
+9h 55min,8h 40min,"15:20 – 04:15
++1",06:00 – 12:40,1 escale,1 escale,AMM,KWI,Royal Jordanian,Kuwait Airways,578,2024-12-09 09:31:31
+6h 45min,7h 10min,"21:35 – 07:20
++1",08:20 – 13:30,direct,direct,,,Emirates,Emirates,919,2024-12-09 09:31:31
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 09:31:31
+6h 40min,7h 20min,10:00 – 19:40,14:40 – 20:00,direct,direct,,,Emirates,Emirates,918,2024-12-09 09:31:31
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 09:31:31
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 10:28:49
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 10:28:49
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 10:28:49
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 10:28:49
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 10:28:49
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 10:28:49
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 10:28:49
+6h 40min,7h 20min,"23:20 – 09:00
++1",00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 10:28:49
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,587,2024-12-09 10:28:49
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 10:28:49
+10h 45min,10h 20min,"18:45 – 08:30
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 10:28:49
+10h 35min,10h 30min,"17:15 – 06:50
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,587,2024-12-09 10:28:49
+9h 21min,7h 20min,"11:40 – 00:01
++1",00:40 – 06:00,1 escale,direct,AMS,,KLM,Air France,774,2024-12-09 10:28:49
+10h 40min,10h 30min,"11:30 – 01:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,587,2024-12-09 10:28:49
+10h 20min,10h 50min,"13:50 – 03:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,587,2024-12-09 10:28:49
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,,2024-12-09 11:33:44
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,,2024-12-09 11:33:44
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+10h 35min,10h 30min,"17:15 – 06:50
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,,2024-12-09 11:33:44
+10h 40min,10h 30min,"11:30 – 01:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,,2024-12-09 11:33:44
+10h 20min,10h 50min,"13:50 – 03:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,,2024-12-09 11:33:44
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+10h 45min,10h 20min,"18:45 – 08:30
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,,2024-12-09 11:33:44
+10h 35min,10h 50min,"17:15 – 06:50
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,,2024-12-09 11:33:44
+10h 40min,10h 50min,"11:30 – 01:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,,2024-12-09 11:33:44
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 13:28:29
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 13:28:29
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 13:28:29
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 13:28:29
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 13:28:29
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 13:28:29
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,581,2024-12-09 13:28:29
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 13:28:29
+6h 40min,7h 20min,"23:20 – 09:00
++1",00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 13:28:29
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 13:28:29
+10h 35min,10h 30min,"17:15 – 06:50
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,581,2024-12-09 13:28:29
+10h 45min,10h 20min,"18:45 – 08:30
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 13:28:29
+10h 40min,10h 30min,"11:30 – 01:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,581,2024-12-09 13:28:29
+10h 20min,10h 50min,"13:50 – 03:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,581,2024-12-09 13:28:29
+9h 21min,7h 20min,"11:40 – 00:01
++1",00:40 – 06:00,1 escale,direct,AMS,,KLM,Air France,774,2024-12-09 13:28:29
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,585,2024-12-09 14:41:15
+10h 20min,14h 00min,"13:50 – 03:10
++1",10:30 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 14:41:15
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,865,2024-12-09 14:41:15
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,601,2024-12-09 14:41:15
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,581,2024-12-09 14:41:15
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,601,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+,,,,,,,,,,,2024-12-09 14:41:15
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,584,2024-12-09 17:25:54
+23h 40min,8h 40min,"20:50 – 23:30
++1",06:00 – 12:40,1 escale,1 escale,CPH,KWI,Norwegian,Kuwait Airways,534,2024-12-09 17:25:54
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,584,2024-12-09 17:25:54
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,584,2024-12-09 17:25:54
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,865,2024-12-09 17:25:54
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,608,2024-12-09 17:25:54
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,608,2024-12-09 17:25:54
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 17:25:54
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,608,2024-12-09 17:25:54
+10h 35min,10h 30min,"17:15 – 06:50
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 17:25:54
+10h 40min,10h 30min,"11:30 – 01:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 17:25:54
+10h 20min,10h 50min,"13:50 – 03:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 17:25:54
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,584,2024-12-09 17:25:54
+10h 45min,10h 20min,"18:45 – 08:30
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,584,2024-12-09 17:25:54
+10h 35min,10h 50min,"17:15 – 06:50
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 17:25:54
+10h 40min,10h 50min,"11:30 – 01:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 17:25:54
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,585,2024-12-09 18:43:49
+23h 40min,8h 40min,"20:50 – 23:30
++1",06:00 – 12:40,1 escale,1 escale,CPH,KWI,Norwegian,Kuwait Airways,533,2024-12-09 18:43:49
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,865,2024-12-09 18:43:49
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,601,2024-12-09 18:43:49
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 18:43:49
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,601,2024-12-09 18:43:49
+10h 35min,10h 30min,"17:15 – 06:50
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 18:43:49
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,626,2024-12-09 18:43:49
+10h 40min,10h 30min,"11:30 – 01:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 18:43:49
+10h 20min,10h 50min,"13:50 – 03:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 18:43:49
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,626,2024-12-09 18:43:49
+10h 35min,10h 50min,"17:15 – 06:50
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 18:43:49
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,626,2024-12-09 18:43:49
+10h 40min,10h 50min,"11:30 – 01:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,579,2024-12-09 18:43:49
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,601,2024-12-09 18:43:49
+9h 40min,10h 15min,08:15 – 20:55,12:05 – 20:20,1 escale,1 escale,DOH,LHR,Plusieurs compagnies,Plusieurs compagnies,659,2024-12-09 18:43:49
+6h 40min,7h 20min,10:00 – 19:40,14:40 – 20:00,direct,direct,,,Emirates,Emirates,740,2024-12-09 19:36:49
+11h 25min,8h 40min,"14:10 – 04:35
++1",06:00 – 12:40,1 escale,1 escale,KWI,KWI,Kuwait Airways,Kuwait Airways,397,2024-12-09 19:36:49
+6h 45min,7h 20min,"21:35 – 07:20
++1",14:40 – 20:00,direct,direct,,,Emirates,Emirates,740,2024-12-09 19:36:49
+9h 50min,8h 40min,"21:10 – 10:00
++1",06:00 – 12:40,1 escale,1 escale,MCT,KWI,Oman Air,Kuwait Airways,566,2024-12-09 19:36:49
+8h 25min,9h 10min,11:10 – 22:35,"23:35 – 06:45
++1",1 escale,1 escale,BAH,BAH,Gulf Air,Gulf Air,588,2024-12-09 19:36:49
+6h 50min,7h 20min,"14:25 – 00:15
++1",14:40 – 20:00,direct,direct,,,Emirates,Emirates,784,2024-12-09 19:36:49
+6h 40min,7h 10min,10:00 – 19:40,08:20 – 13:30,direct,direct,,,Emirates,Emirates,800,2024-12-09 19:36:49
+6h 45min,7h 10min,"21:35 – 07:20
++1",08:20 – 13:30,direct,direct,,,Emirates,Emirates,800,2024-12-09 19:36:49
+9h 55min,10h 30min,"15:20 – 04:15
++1","21:50 – 06:20
++1",1 escale,1 escale,AMM,AMM,Royal Jordanian,Royal Jordanian,550,2024-12-09 19:36:49
+6h 40min,7h 20min,10:00 – 19:40,04:05 – 09:25,direct,direct,,,Emirates,Emirates,800,2024-12-09 19:36:49
+6h 45min,7h 20min,"21:35 – 07:20
++1",04:05 – 09:25,direct,direct,,,Emirates,Emirates,800,2024-12-09 19:36:49
+8h 25min,11h 25min,11:10 – 22:35,"21:20 – 06:45
++1",1 escale,1 escale,BAH,BAH,Gulf Air,Gulf Air,566,2024-12-09 19:36:49
+9h 55min,8h 40min,"15:20 – 04:15
++1",06:00 – 12:40,1 escale,1 escale,AMM,KWI,Royal Jordanian,Kuwait Airways,574,2024-12-09 19:36:49
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 19:36:49
+6h 50min,7h 10min,"14:25 – 00:15
++1",08:20 – 13:30,direct,direct,,,Emirates,Emirates,850,2024-12-09 19:36:49
+6h 45min,7h 20min,13:35 – 23:20,00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 21:13:05
+23h 40min,8h 40min,"20:50 – 23:30
++1",06:00 – 12:40,1 escale,1 escale,CPH,KWI,Norwegian,Kuwait Airways,533,2024-12-09 21:13:05
+9h 55min,10h 20min,10:50 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 21:13:05
+9h 55min,10h 20min,"18:45 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 21:13:05
+10h 10min,10h 20min,"18:30 – 07:40
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 21:13:05
+9h 55min,10h 15min,10:50 – 23:45,12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 21:13:05
+9h 55min,10h 15min,"18:45 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 21:13:05
+10h 20min,10h 30min,"13:50 – 03:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,573,2024-12-09 21:13:05
+10h 10min,10h 15min,"18:30 – 07:40
++1",12:05 – 20:20,1 escale,1 escale,LHR,LHR,British Airways,British Airways,602,2024-12-09 21:13:05
+10h 35min,10h 30min,"17:15 – 06:50
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,573,2024-12-09 21:13:05
+6h 40min,7h 20min,"23:20 – 09:00
++1",00:40 – 06:00,direct,direct,,,Air France,Air France,853,2024-12-09 21:13:05
+10h 40min,10h 30min,"11:30 – 01:10
++1",14:00 – 22:30,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,573,2024-12-09 21:13:05
+10h 20min,10h 50min,"13:50 – 03:10
++1",07:55 – 16:45,1 escale,1 escale,IST,IST,Turkish Airlines,Turkish Airlines,573,2024-12-09 21:13:05
+10h 45min,10h 20min,10:00 – 23:45,09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 21:13:05
+10h 45min,10h 20min,"18:45 – 08:30
++1",09:20 – 17:40,1 escale,1 escale,LHR,LHR,British Airways,British Airways,578,2024-12-09 21:13:05
+9h 21min,7h 20min,"11:40 – 00:01
++1",00:40 – 06:00,1 escale,direct,AMS,,KLM,Air France,774,2024-12-09 21:13:05
