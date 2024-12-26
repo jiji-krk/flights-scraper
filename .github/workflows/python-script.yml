@@ -22,7 +22,34 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: flights-database
-          path: flights_data.db  # Télécharge le fichier existant
+          path: flights_data.db
+        continue-on-error: true  # Permet d'ignorer les erreurs si l'artefact n'existe pas
+
+      - name: Initialize SQLite database if not found
+        if: failure()  # S'exécute uniquement si l'étape précédente échoue
+        run: |
+          echo "Initialisation de flights_data.db car l'artefact est introuvable."
+          python -c "
+          import sqlite3
+          conn = sqlite3.connect('flights_data.db')
+          cursor = conn.cursor()
+          cursor.execute('''
+          CREATE TABLE IF NOT EXISTS flights (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              out_duration TEXT,
+              return_duration TEXT,
+              out_time TEXT,
+              return_time TEXT,
+              out_stops TEXT,
+              out_airline TEXT,
+              price REAL,
+              scraped_timestamp TEXT,
+              UNIQUE(out_time, return_time, price)
+          )
+          ''')
+          conn.commit()
+          conn.close()
+          "
 
       - name: Install dependencies
         run: pip install --upgrade selenium webdriver-manager pandas
@@ -34,4 +61,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: flights-database
-          path: flights_data.db  # Ré-upload le fichier mis à jour
+          path: flights_data.db
