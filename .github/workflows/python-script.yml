@@ -1,4 +1,4 @@
-name: Update Flight Data Hourly
+name: Scrape and Update SQLite Database
 
 on:
   schedule:
@@ -7,10 +7,10 @@ on:
 
 jobs:
   update-database:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Mise à jour anticipée vers ubuntu-24.04
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -18,14 +18,47 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install all necessary packages
+      - name: Download SQLite database (if exists)
+        uses: actions/download-artifact@v4
+        with:
+          name: flights-database
+          path: flights_data.db
+        continue-on-error: true  # Ignore l'erreur si l'artefact n'existe pas
+
+      - name: Initialize SQLite database if artifact not found
+        if: ${{ failure() }}  # S'exécute uniquement si le téléchargement échoue
+        run: |
+          echo "Initialisation de flights_data.db car l'artefact est introuvable."
+          python -c "
+          import sqlite3
+          conn = sqlite3.connect('flights_data.db')
+          cursor = conn.cursor()
+          cursor.execute('''
+          CREATE TABLE IF NOT EXISTS flights (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              out_duration TEXT,
+              return_duration TEXT,
+              out_time TEXT,
+              return_time TEXT,
+              out_stops TEXT,
+              out_airline TEXT,
+              price REAL,
+              scraped_timestamp TEXT,
+              UNIQUE(out_time, return_time, price)
+          )
+          ''')
+          conn.commit()
+          conn.close()
+          "
+
+      - name: Install dependencies
         run: pip install --upgrade selenium webdriver-manager pandas
 
       - name: Run scraping script
         run: python schedule.py
 
-      - name: Upload SQLite database
-        uses: actions/upload-artifact@v3
+      - name: Upload updated SQLite database
+        uses: actions/upload-artifact@v4
         with:
           name: flights-database
           path: flights_data.db
