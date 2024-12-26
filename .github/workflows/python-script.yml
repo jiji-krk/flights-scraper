@@ -18,7 +18,13 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install all necessary packages
+      - name: Download SQLite database
+        uses: actions/download-artifact@v3
+        with:
+          name: flights-database
+          path: flights_data.db  # Télécharge le fichier existant
+
+      - name: Install dependencies
         run: pip install --upgrade selenium webdriver-manager pandas
 
       - name: Run scraping script
@@ -28,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: flights-database
-          path: flights_data.db
+          path: flights_data.db  # Ré-upload le fichier mis à jour
