@@ -7,7 +7,7 @@ on:
 
 jobs:
   update-database:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # Mise à jour anticipée vers ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -18,15 +18,15 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Download SQLite database
-        uses: actions/download-artifact@v3
+      - name: Download SQLite database (if exists)
+        uses: actions/download-artifact@v4
         with:
           name: flights-database
           path: flights_data.db
         continue-on-error: true  # Ignore l'erreur si l'artefact n'existe pas
 
-      - name: Initialize SQLite database if not found
-        if: steps.download-db.outcome == 'failure'  # Vérifiez que cette condition est valide
+      - name: Initialize SQLite database if artifact not found
+        if: ${{ failure() }}  # S'exécute uniquement si le téléchargement échoue
         run: |
           echo "Initialisation de flights_data.db car l'artefact est introuvable."
           python -c "
@@ -58,7 +58,7 @@ jobs:
         run: python schedule.py
 
       - name: Upload updated SQLite database
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: flights-database
           path: flights_data.db
