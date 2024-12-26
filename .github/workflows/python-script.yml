@@ -26,30 +26,30 @@ jobs:
         continue-on-error: true  # Ignore l'erreur si l'artefact n'existe pas
 
       - name: Initialize SQLite database if not found
-        if: ${{ failure() }}
+        if: steps.download-db.outcome == 'failure'  # Vérifiez que cette condition est valide
         run: |
-          echo "Création d'une nouvelle base de données SQLite."
+          echo "Initialisation de flights_data.db car l'artefact est introuvable."
           python -c "
-import sqlite3
-conn = sqlite3.connect('flights_data.db')
-cursor = conn.cursor()
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS flights (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    out_duration TEXT,
-    return_duration TEXT,
-    out_time TEXT,
-    return_time TEXT,
-    out_stops TEXT,
-    out_airline TEXT,
-    price REAL,
-    scraped_timestamp TEXT,
-    UNIQUE(out_time, return_time, price)
-)
-''')
-conn.commit()
-conn.close()
-"
+          import sqlite3
+          conn = sqlite3.connect('flights_data.db')
+          cursor = conn.cursor()
+          cursor.execute('''
+          CREATE TABLE IF NOT EXISTS flights (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              out_duration TEXT,
+              return_duration TEXT,
+              out_time TEXT,
+              return_time TEXT,
+              out_stops TEXT,
+              out_airline TEXT,
+              price REAL,
+              scraped_timestamp TEXT,
+              UNIQUE(out_time, return_time, price)
+          )
+          ''')
+          conn.commit()
+          conn.close()
+          "
 
       - name: Install dependencies
         run: pip install --upgrade selenium webdriver-manager pandas
