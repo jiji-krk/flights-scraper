@@ -1,64 +1,55 @@
-name: Scrape and Update SQLite Database
+name: Update Flight Data Hourly
 
 on:
   schedule:
     - cron: "0 * * * *"  # Exécuter toutes les heures
-  workflow_dispatch:  # Permet d'exécuter manuellement
+  workflow_dispatch:  # Permet d'exécuter manuellement depuis l'UI GitHub Actions
 
 jobs:
   update-database:
-    runs-on: ubuntu-24.04  # Mise à jour anticipée vers ubuntu-24.04
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      # 1) On récupère le code du dépôt
+      - name: Checkout code
         uses: actions/checkout@v3
 
+      # 2) Installation de Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Download SQLite database (if exists)
-        uses: actions/download-artifact@v4
-        with:
-          name: flights-database
-          path: flights_data.db
-        continue-on-error: true  # Ignore l'erreur si l'artefact n'existe pas
-
-      - name: Initialize SQLite database if artifact not found
-        if: ${{ failure() }}  # S'exécute uniquement si le téléchargement échoue
-        run: |
-          echo "Initialisation de flights_data.db car l'artefact est introuvable."
-          python -c "
-          import sqlite3
-          conn = sqlite3.connect('flights_data.db')
-          cursor = conn.cursor()
-          cursor.execute('''
-          CREATE TABLE IF NOT EXISTS flights (
-              id INTEGER PRIMARY KEY AUTOINCREMENT,
-              out_duration TEXT,
-              return_duration TEXT,
-              out_time TEXT,
-              return_time TEXT,
-              out_stops TEXT,
-              out_airline TEXT,
-              price REAL,
-              scraped_timestamp TEXT,
-              UNIQUE(out_time, return_time, price)
-          )
-          ''')
-          conn.commit()
-          conn.close()
-          "
-
-      - name: Install dependencies
+      # 3) Installation des dépendances (selenium, webdriver-manager, pandas, etc.)
+      - name: Install all necessary packages
         run: pip install --upgrade selenium webdriver-manager pandas
 
+      # 4) Récupération de l'ID du run le plus récent contenant l’artifact (la base SQLite)
+      - name: Get latest artifact run id
+        run: |
+          ARTIFACT_RUN_ID=$(curl -s "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=1" \
+            | jq '.artifacts[0].workflow_run.id')
+          echo "artifact_run_id=$ARTIFACT_RUN_ID" >> $GITHUB_ENV
+
+      # 5) Téléchargement de l’artifact si disponible
+      #    - 'continue-on-error: true' évite l'échec si l'artifact n'existe pas encore (premier run).
+      - name: Download SQLite database
+        uses: actions/download-artifact@v3
+        with:
+          name: flights-database      # Nom de l'artifact
+          path: .                     # On place la DB dans le répertoire courant
+          run-id: ${{ env.artifact_run_id }}
+        continue-on-error: true
+
+      # 6) Exécution du script Python qui met à jour la DB (sans l’écraser).
+      #    Assurez-vous que votre script "schedule.py" ouvre flights_data.db en mode "append" ou "update", et non en mode "overwrite".
       - name: Run scraping script
         run: python schedule.py
 
-      - name: Upload updated SQLite database
-        uses: actions/upload-artifact@v4
+      # 7) Ré-upload de la base SQLite mise à jour
+      - name: Upload SQLite database
+        uses: actions/upload-artifact@v3
         with:
           name: flights-database
           path: flights_data.db
+          if-no-files-found: error
