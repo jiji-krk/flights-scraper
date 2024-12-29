@@ -3,53 +3,48 @@ name: Update Flight Data Hourly
 on:
   schedule:
     - cron: "0 * * * *"  # Exécuter toutes les heures
-  workflow_dispatch:  # Permet d'exécuter manuellement depuis l'UI GitHub Actions
+  workflow_dispatch:      # Permet d'exécuter manuellement
 
 jobs:
   update-database:
     runs-on: ubuntu-latest
 
     steps:
-      # 1) On récupère le code du dépôt
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2) Installation de Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      # 3) Installation des dépendances (selenium, webdriver-manager, pandas, etc.)
-      - name: Install all necessary packages
+      - name: Install packages
         run: pip install --upgrade selenium webdriver-manager pandas
 
-      # 4) Récupération de l'ID du run le plus récent contenant l’artifact (la base SQLite)
+      # Récupérer l'ID du run qui contient l'artifact le plus récent
       - name: Get latest artifact run id
         run: |
           ARTIFACT_RUN_ID=$(curl -s "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=1" \
             | jq '.artifacts[0].workflow_run.id')
           echo "artifact_run_id=$ARTIFACT_RUN_ID" >> $GITHUB_ENV
 
-      # 5) Téléchargement de l’artifact si disponible
-      #    - 'continue-on-error: true' évite l'échec si l'artifact n'existe pas encore (premier run).
+      # Télécharger l'artifact s'il existe (version v4 pour le paramètre run-id)
       - name: Download SQLite database
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
-          name: flights-database      # Nom de l'artifact
-          path: .                     # On place la DB dans le répertoire courant
+          name: flights-database
+          path: .
           run-id: ${{ env.artifact_run_id }}
+          # github-token: ${{ secrets.GH_PAT }}  # <-- PAT nécessaire si vous téléchargez depuis un autre dépôt ou un private repo
         continue-on-error: true
 
-      # 6) Exécution du script Python qui met à jour la DB (sans l’écraser).
-      #    Assurez-vous que votre script "schedule.py" ouvre flights_data.db en mode "append" ou "update", et non en mode "overwrite".
+      # Votre script qui met à jour la DB. Vérifiez qu'il ne la recrée pas de zéro.
       - name: Run scraping script
         run: python schedule.py
 
-      # 7) Ré-upload de la base SQLite mise à jour
+      # Ré-uploader la DB mise à jour
       - name: Upload SQLite database
         uses: actions/upload-artifact@v3
         with:
           name: flights-database
           path: flights_data.db
-          if-no-files-found: error
