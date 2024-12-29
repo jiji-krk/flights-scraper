@@ -1,37 +1,50 @@
-name: Download old flights-database
+name: Update Flight Data Hourly
 
 on:
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  actions: read
+  schedule:
+    - cron: "0 * * * *"  # Exécuter toutes les heures
+  workflow_dispatch:      # Permet d'exécuter manuellement
 
 jobs:
-  download-db:
+  update-database:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install packages
+        run: pip install --upgrade selenium webdriver-manager pandas
+
+      # Récupérer l'ID du run qui contient l'artifact le plus récent
       - name: Get latest artifact run id
         run: |
-          ARTIFACT_RUN_ID=$(curl -s \
-            "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=1" \
-            | jq '.artifacts[0].workflow_run.id'
-          )
+          ARTIFACT_RUN_ID=$(curl -s "https://api.github.com/repos/${{ github.repository }}/actions/artifacts?per_page=1" \
+            | jq '.artifacts[0].workflow_run.id')
           echo "artifact_run_id=$ARTIFACT_RUN_ID" >> $GITHUB_ENV
 
-      - name: Download flights-database
+      # Télécharger l'artifact s'il existe (version v4 pour le paramètre run-id)
+      - name: Download SQLite database
         uses: actions/download-artifact@v4
         with:
-          owner: jiji-krk
-          repo: flights-scraper
-          run-id: ${{ env.artifact_run_id }}
           name: flights-database
           path: .
-          # Nécessaire si votre repo est privé, ou pour un run différent
-          github-token: ${{ secrets.GH_PAT }}
+          run-id: ${{ env.artifact_run_id }}
+          # github-token: ${{ secrets.GH_PAT }}  # <-- PAT nécessaire si vous téléchargez depuis un autre dépôt ou un private repo
+        continue-on-error: true
 
-      - name: Check file
-        run: ls -l flights_data.db
+      # Votre script qui met à jour la DB. Vérifiez qu'il ne la recrée pas de zéro.
+      - name: Run scraping script
+        run: python schedule.py
+
+      # Ré-uploader la DB mise à jour
+      - name: Upload SQLite database
+        uses: actions/upload-artifact@v3
+        with:
+          name: flights-database
+          path: flights_data.db
