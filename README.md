@@ -27,7 +27,7 @@ This repository is organized to clearly separate:
    - **`Scraping_API.ipynb`**: Generates `flights_emissions_data.csv`, containing data retrieved from Google Flights via the SerpAPI API.
 
 2. **Python scripts** in the `scripts/` folder:  
-   - **`download_merge.py`**: Merges the artifacts produced by GitHub Actions (since each `schedule.py` run generates a new `flights_database` file).  
+   - **`download_merge.py`**: Merges the artifacts produced by GitHub Actions (since each `schedule.py` run generates a new `merged_flights.db`/ artifacts_flights_cleaned.csv file).  
    - **`clean_sqlite_db.py`**: Cleans the database before converting it to CSV (removing empty rows, etc.).
 
 3. **ML folder**: *(to be implemented)*
