@@ -19,6 +19,12 @@ The goal is to gradually build a **reliable** and **comprehensive** dataset over
 ---
 
 ## Architecture
+
+
+![image](https://github.com/user-attachments/assets/09ae1e84-c941-4036-b847-297ea32563ae)
+
+
+
 This repository is organized to clearly separate:
 
 1. **Jupyter notebooks** in the `WebScraping/` folder:  
