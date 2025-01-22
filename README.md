@@ -51,6 +51,8 @@ The app analyzes this query to extract:
 - Departure and return dates,
 - Budget.
 
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/7c2f54fb-dcb0-4518-bc87-f9a9bb3cceae" />
+
 It then generates a dynamic URL for the Kayak website to directly search for corresponding flights.
 
 ---
