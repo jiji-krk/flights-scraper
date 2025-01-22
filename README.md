@@ -36,10 +36,24 @@ This repository is organized to clearly separate:
    - **`download_merge.py`**: Merges the artifacts produced by GitHub Actions. Since each `schedule.py` run generates a new `merged_flights.db`/ `artifacts_flights_cleaned.csv` file.  
    - **`clean_sqlite_db.py`**: Cleans the database before converting it to CSV (removing empty rows, etc.).
 
-3. **ML folder**: *(to be implemented)*
+3. **ML folder**: The ML folder contains machine learning models and scripts for predictive analysis based on the collected flight data.
+   - **ML_CO2_Predictions.ipynb**: A Jupyter notebook focused on predicting CO₂ emissions for flights. It leverages features like flight duration, stopovers, and airline type to estimate emissions. The notebook includes feature importance analysis and model evaluation metrics.
+   - **ML_Price_Detection.ipynb**: A Jupyter notebook aimed at predicting flight ticket prices. It uses attributes such as airline, duration, and time of scraping to forecast prices. The notebook compares different regression models (e.g., Random Forest, XGBoost) and evaluates their performance.
 
 4. **GitHub Actions configuration** in `.github/workflows/`:  
    - Enables the automated execution of `schedule.py`.
+
+5. **Streamlit App**: This Streamlit application uses **NLP (Natural Language Processing)** and **NER (Named Entity Recognition)** powered by **SpaCy** to extract travel-related information from free-text input (in French or English). Users can input a query like:
+> "I want to leave from Paris to Dubai between 2025-03-01 and 2025-03-10 with a budget of $800."
+
+The app analyzes this query to extract:
+- Departure and destination cities,
+- Departure and return dates,
+- Budget.
+
+<img width="284" alt="image" src="https://github.com/user-attachments/assets/7c2f54fb-dcb0-4518-bc87-f9a9bb3cceae" />
+
+It then generates a dynamic URL for the Kayak website to directly search for corresponding flights.
 
 ---
 
