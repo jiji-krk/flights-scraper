@@ -21,7 +21,8 @@ The goal is to gradually build a **reliable** and **comprehensive** dataset over
 ## Architecture
 
 
-![image](https://github.com/user-attachments/assets/09ae1e84-c941-4036-b847-297ea32563ae)
+![image](https://github.com/user-attachments/assets/9a563203-24a7-4e32-a55f-7abb27a51aa3)
+
 
 
 
