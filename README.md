@@ -43,6 +43,8 @@ This repository is organized to clearly separate:
 4. **GitHub Actions configuration** in `.github/workflows/`:  
    - Enables the automated execution of `schedule.py`.
 
+![image](https://github.com/user-attachments/assets/2b6eef88-834f-4931-aa68-4de3f5913dfc)
+
 5. **Streamlit App**: This Streamlit application uses **NLP (Natural Language Processing)** and **NER (Named Entity Recognition)** powered by **SpaCy** to extract travel-related information from free-text input (in French or English). Users can input a query like:
 > "I want to leave from Paris to Dubai between 2025-03-01 and 2025-03-10 with a budget of $800."
 
